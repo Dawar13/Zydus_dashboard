@@ -22,12 +22,12 @@ export default function HealthCard({ value }: HealthCardProps) {
     const data = [{ name: "Health", value, fill: color }];
 
     return (
-        <div className="flex flex-col items-center justify-center rounded-xl bg-white p-5 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-800 dark:shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-xl bg-white p-3 shadow-sm transition-shadow hover:shadow-md sm:p-5 dark:bg-slate-800 dark:shadow-md">
             <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                 Machine Health Index
             </p>
 
-            <div className="relative mt-2 h-[160px] w-[160px]">
+            <div className="relative mt-2 h-[130px] w-[130px] sm:h-[160px] sm:w-[160px]">
                 <ResponsiveContainer width="100%" height="100%">
                     <RadialBarChart
                         cx="50%"

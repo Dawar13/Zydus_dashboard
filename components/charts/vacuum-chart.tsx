@@ -25,7 +25,7 @@ export default function VacuumChart({ data }: VacuumChartProps) {
     const chartData = data[range];
 
     return (
-        <div className="rounded-xl bg-white p-5 shadow-sm dark:bg-slate-800 dark:shadow-md">
+        <div className="rounded-xl bg-white p-3 shadow-sm sm:p-5 dark:bg-slate-800 dark:shadow-md">
             <div className="flex items-center justify-between">
                 <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                     Vacuum Level
@@ -48,7 +48,7 @@ export default function VacuumChart({ data }: VacuumChartProps) {
                 </div>
             </div>
 
-            <div className="mt-4 h-[240px]">
+            <div className="mt-4 h-[200px] sm:h-[240px]">
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={chartData}>
                         <defs>

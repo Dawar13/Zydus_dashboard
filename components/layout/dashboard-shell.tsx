@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+//import { useState } from "react";
 import Sidebar from "./sidebar";
 import Topbar from "./topbar";
 import { Menu } from "lucide-react";
@@ -45,7 +45,7 @@ export default function DashboardShell({
                 </div>
 
                 {/* Page Content */}
-                <main className="flex-1 overflow-y-auto bg-[#f5f6f8] p-6 dark:bg-[#0f172a]">
+                <main className="flex-1 overflow-y-auto bg-[#f5f6f8] p-3 sm:p-6 dark:bg-[#0f172a]">
                     {children}
                 </main>
             </div>

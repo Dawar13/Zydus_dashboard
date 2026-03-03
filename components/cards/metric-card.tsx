@@ -19,7 +19,7 @@ const deltaColors = {
 
 export default function MetricCard({ data }: MetricCardProps) {
     return (
-        <div className="rounded-xl bg-white p-5 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-800 dark:shadow-md">
+        <div className="rounded-xl bg-white p-3 shadow-sm transition-shadow hover:shadow-md sm:p-5 dark:bg-slate-800 dark:shadow-md">
             <div className="flex items-start justify-between">
                 <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                     {data.title}
@@ -28,7 +28,7 @@ export default function MetricCard({ data }: MetricCardProps) {
             </div>
 
             <div className="mt-2 flex items-baseline gap-2">
-                <span className="text-3xl font-semibold text-slate-900 dark:text-slate-100">
+                <span className="text-2xl font-semibold text-slate-900 sm:text-3xl dark:text-slate-100">
                     {data.value}
                 </span>
                 <span className="text-sm font-medium text-slate-400 dark:text-slate-500">

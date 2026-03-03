@@ -22,16 +22,16 @@ export default function Topbar({
     const lastUpdated = "03 Mar 2026, 12:55 PM";
 
     return (
-        <header className="flex items-center justify-between border-b border-gray-200 bg-white px-6 py-4 dark:border-slate-700 dark:bg-slate-900">
+        <header className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 bg-white px-4 py-3 sm:px-6 sm:py-4 dark:border-slate-700 dark:bg-slate-900">
             {/* Left */}
             <div className="flex items-center gap-4">
-                <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                <h1 className="text-base font-semibold text-slate-900 sm:text-lg dark:text-slate-100">
                     Vacuum Pump Analytics
                 </h1>
             </div>
 
             {/* Right */}
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-3 sm:gap-5">
                 {/* Pump ID Dropdown */}
                 <select
                     value={selectedPump}
@@ -46,7 +46,9 @@ export default function Topbar({
                 </select>
 
                 {/* Status LED */}
-                <StatusBadge status={status} />
+                <span className="hidden sm:inline-flex">
+                    <StatusBadge status={status} />
+                </span>
 
                 {/* Last Updated */}
                 <span className="hidden text-xs text-slate-500 dark:text-slate-400 sm:inline-block">
@@ -54,7 +56,7 @@ export default function Topbar({
                 </span>
 
                 {/* User Avatar */}
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-700">
+                <div className="hidden h-8 w-8 items-center justify-center rounded-full bg-slate-200 sm:flex dark:bg-slate-700">
                     <User className="h-4 w-4 text-slate-600 dark:text-slate-300" />
                 </div>
             </div>

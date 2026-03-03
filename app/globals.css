@@ -28,12 +28,15 @@
 
 html {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.2s ease, color 0.2s ease;
+  overflow-x: hidden;
 }
 
 /* Smooth scrollbar */

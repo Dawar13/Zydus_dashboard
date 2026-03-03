@@ -26,7 +26,7 @@ const severityConfig = {
 export default function AlertsPanel({ alerts }: AlertsPanelProps) {
 
     return (
-        <div className="rounded-xl bg-white p-5 shadow-sm dark:bg-slate-800 dark:shadow-md">
+        <div className="rounded-xl bg-white p-3 shadow-sm sm:p-5 dark:bg-slate-800 dark:shadow-md">
             <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                 Active Alerts
             </h3>

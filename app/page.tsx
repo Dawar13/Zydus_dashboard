@@ -83,9 +83,9 @@ export default function DashboardPage() {
       onPumpChange={setSelectedPump}
       healthIndex={healthIndex}
     >
-      <div className="mx-auto max-w-7xl space-y-6">
+      <div className="mx-auto max-w-7xl space-y-4 sm:space-y-6">
         {/* Row 1: Health Card + First 2 Metric Cards */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
           <HealthCard value={healthIndex} />
           {displayMetrics.slice(0, 2).map((m) => (
             <MetricCard key={m.title} data={m} />
@@ -93,14 +93,14 @@ export default function DashboardPage() {
         </div>
 
         {/* Row 2: Remaining 4 Metric Cards */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
           {displayMetrics.slice(2).map((m) => (
             <MetricCard key={m.title} data={m} />
           ))}
         </div>
 
         {/* Row 3: Charts */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2">
           <VacuumChart data={charts.vacuum} />
           <PowerChart data={charts.power} />
         </div>
