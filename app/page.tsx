@@ -27,7 +27,7 @@ export default function DashboardPage() {
           ? "+5% from setpoint"
           : "On target",
       deltaType:
-        metrics.vacuumCurrent > metrics.vacuumSetpoint ? "negative" : "green",
+        metrics.vacuumCurrent > metrics.vacuumSetpoint ? "negative" : "positive",
       status:
         metrics.vacuumCurrent > metrics.vacuumSetpoint ? "yellow" : "green",
     },
