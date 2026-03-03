@@ -33,6 +33,7 @@ function generateTimeSeries(
 }
 
 // ─── Pump Data Storage ──────────────────────────────────────────────
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const pumpData: Record<string, any> = {
     "VP-2401": {
         healthIndex: 87,

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { useTheme } from "@/app/providers";
 import { cn } from "@/lib/utils";
 import {
@@ -11,7 +10,6 @@ import {
     Sun,
     Moon,
     X,
-    Menu,
 } from "lucide-react";
 
 const navItems = [
