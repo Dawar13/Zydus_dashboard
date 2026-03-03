@@ -32,9 +32,33 @@ function generateTimeSeries(
     });
 }
 
+// ─── Pump Data Types ────────────────────────────────────────────────
+interface PumpMetrics {
+    vacuumCurrent: number;
+    vacuumSetpoint: number;
+    powerLoad: number;
+    oilLevel: number;
+    runningHours: number;
+    timeToSetpoint: number;
+}
+
+interface TimeRangeCharts {
+    "1h": TimeSeriesPoint[];
+    "6h": TimeSeriesPoint[];
+    "24h": TimeSeriesPoint[];
+}
+
+interface PumpEntry {
+    healthIndex: number;
+    metrics: PumpMetrics;
+    charts: {
+        vacuum: TimeRangeCharts;
+        power: TimeRangeCharts;
+    };
+}
+
 // ─── Pump Data Storage ──────────────────────────────────────────────
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const pumpData: Record<string, any> = {
+export const pumpData: Record<string, PumpEntry> = {
     "VP-2401": {
         healthIndex: 87,
         metrics: {
