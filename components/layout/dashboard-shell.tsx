@@ -1,8 +1,10 @@
 "use client";
 
-//import { useState } from "react";
+import { useState } from "react";
 import Sidebar from "./sidebar";
 import Topbar from "./topbar";
+import ChatbotFab from "@/components/chatbot/chatbot-fab";
+import ChatbotModal from "@/components/chatbot/chatbot-modal";
 import { Menu } from "lucide-react";
 
 interface DashboardShellProps {
@@ -19,6 +21,7 @@ export default function DashboardShell({
     healthIndex,
 }: DashboardShellProps) {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [chatOpen, setChatOpen] = useState(false);
 
     return (
         <div className="flex h-full min-h-screen">
@@ -49,6 +52,10 @@ export default function DashboardShell({
                     {children}
                 </main>
             </div>
+
+            {/* Chatbot FAB + Modal */}
+            <ChatbotFab onClick={() => setChatOpen(true)} />
+            <ChatbotModal open={chatOpen} onClose={() => setChatOpen(false)} />
         </div>
     );
 }

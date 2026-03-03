@@ -7,7 +7,6 @@ import HealthCard from "@/components/cards/health-card";
 import VacuumChart from "@/components/charts/vacuum-chart";
 import PowerChart from "@/components/charts/power-chart";
 import AlertsPanel from "@/components/alerts/alerts-panel";
-import ChatbotFab from "@/components/chatbot/chatbot-fab";
 import { pumpData, alertsData, type MetricData } from "@/lib/mock-data";
 
 export default function DashboardPage() {
@@ -109,8 +108,6 @@ export default function DashboardPage() {
         <AlertsPanel alerts={alertsData} />
       </div>
 
-      {/* Chatbot FAB */}
-      <ChatbotFab />
     </DashboardShell>
   );
 }
