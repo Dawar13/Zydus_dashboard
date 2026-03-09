@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import type { AlertItem } from "@/lib/mock-data";
 import { AlertTriangle, AlertCircle } from "lucide-react";
@@ -24,6 +25,7 @@ const severityConfig = {
 };
 
 export default function AlertsPanel({ alerts }: AlertsPanelProps) {
+    const router = useRouter();
 
     return (
         <div className="rounded-xl bg-white p-3 shadow-sm sm:p-5 dark:bg-slate-800 dark:shadow-md">
@@ -35,14 +37,25 @@ export default function AlertsPanel({ alerts }: AlertsPanelProps) {
                 {alerts.map((alert) => {
                     const config = severityConfig[alert.severity];
                     const Icon = config.icon;
+                    const isCritical = alert.severity === "critical";
 
                     return (
                         <div
                             key={alert.id}
+                            onClick={
+                                isCritical
+                                    ? () =>
+                                        router.push(
+                                            "/alerts/vacuum-deviation"
+                                        )
+                                    : undefined
+                            }
                             className={cn(
                                 "flex w-full flex-col sm:flex-row sm:items-start gap-3 rounded-lg border-l-4 p-3 text-left",
                                 config.border,
-                                config.bg
+                                config.bg,
+                                isCritical &&
+                                "cursor-pointer transition-transform hover:scale-[1.01]"
                             )}
                         >
                             <Icon className={cn("mt-0.5 h-4 w-4 flex-shrink-0", config.iconColor)} />
