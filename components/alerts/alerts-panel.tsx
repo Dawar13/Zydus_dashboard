@@ -24,6 +24,12 @@ const severityConfig = {
     },
 };
 
+const alertRoutes: Record<string, string> = {
+    a1: "/alerts/vacuum-deviation",
+    a2: "/alerts/oil-level-low",
+    a3: "/alerts/power-load-high",
+};
+
 export default function AlertsPanel({ alerts }: AlertsPanelProps) {
     const router = useRouter();
 
@@ -37,24 +43,21 @@ export default function AlertsPanel({ alerts }: AlertsPanelProps) {
                 {alerts.map((alert) => {
                     const config = severityConfig[alert.severity];
                     const Icon = config.icon;
-                    const isCritical = alert.severity === "critical";
+                    const route = alertRoutes[alert.id];
 
                     return (
                         <div
                             key={alert.id}
                             onClick={
-                                isCritical
-                                    ? () =>
-                                        router.push(
-                                            "/alerts/vacuum-deviation"
-                                        )
+                                route
+                                    ? () => router.push(route)
                                     : undefined
                             }
                             className={cn(
                                 "flex w-full flex-col sm:flex-row sm:items-start gap-3 rounded-lg border-l-4 p-3 text-left",
                                 config.border,
                                 config.bg,
-                                isCritical &&
+                                route &&
                                 "cursor-pointer transition-transform hover:scale-[1.01]"
                             )}
                         >
@@ -74,3 +77,4 @@ export default function AlertsPanel({ alerts }: AlertsPanelProps) {
         </div>
     );
 }
+
